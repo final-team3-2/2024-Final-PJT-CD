@@ -32,7 +32,10 @@ spec:
               name: back-secret 
               key: node_env
         - name: MYSQL_HOST
-          value: "192.168.219.105"
+          valueFrom:
+            secretKeyRef:
+              name: back-secret
+              key: mysql_host
         - name: MYSQL_PORT
           valueFrom:
             secretKeyRef:
@@ -53,6 +56,31 @@ spec:
             secretKeyRef:
               name: back-secret
               key: mysql_password
+        - name: MYSQL_HOST_R
+          valueFrom:
+            secretKeyRef:
+              name: back-secret
+              key: mysql_host_r
+        - name: MYSQL_PORT_R
+          valueFrom:
+            secretKeyRef:
+              name: back-secret
+              key: mysql_port_r
+        - name: MYSQL_DATABASE_R
+          valueFrom:
+            secretKeyRef:
+              name: back-secret
+              key: mysql_database_r
+        - name: MYSQL_USER_R
+          valueFrom:
+            secretKeyRef:
+              name: back-secret
+              key: mysql_user_r
+        - name: MYSQL_PASSWORD_R
+          valueFrom:
+            secretKeyRef:
+              name: back-secret
+              key: mysql_password_r
         - name: PORT
           value: "8000"
       imagePullSecrets:
