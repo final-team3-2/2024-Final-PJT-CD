@@ -32,10 +32,7 @@ spec:
               name: back-secret 
               key: node_env
         - name: MYSQL_HOST
-          valueFrom:
-            secretKeyRef:
-              name: back-secret
-              key: mysql_host
+          value: "192.168.219.105"
         - name: MYSQL_PORT
           valueFrom:
             secretKeyRef:
