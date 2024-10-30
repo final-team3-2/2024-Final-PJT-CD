@@ -18,6 +18,7 @@ spec:
       containers:
       - name: frontend
         image: 061039804626.dkr.ecr.ap-northeast-2.amazonaws.com/team3/final_front_test:jenkins
+        imagePullPolicy: Always
         ports:
         - containerPort: 443
         env:
